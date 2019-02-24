@@ -14,8 +14,6 @@ public class DynamicItemGenerator : MonoBehaviour
     private int startPos = -160;
     //ゴール地点
     private int goalPos = 120;
-    //アイテムを生成する地点;
-    private int itemGenPos = 0;
     //アイテムを出す×方向の範囲
     private float posRangeX = 3.4f;
     //アイテムを出すy方向の範囲
@@ -24,15 +22,14 @@ public class DynamicItemGenerator : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //アイテムを出すUnityちゃんの地点を設定
-        itemGenPos = startPos - posRangeZ;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         //Unityちゃんの現在地点が一定の範囲内であればアイテムを生成
-        if (itemGenPos <= this.transform.position.z && this.transform.position.z <= goalPos - posRangeZ)
+        if (startPos - posRangeZ <= this.transform.position.z && this.transform.position.z <= goalPos - posRangeZ)
         {
             //どのアイテムを出すのかをランダムに設定
             int num = Random.Range(1, 11);
@@ -42,7 +39,7 @@ public class DynamicItemGenerator : MonoBehaviour
                 for (float j = -1; j <= 1; j += 0.4f)
                 {
                     GameObject cone = Instantiate(conePrefab) as GameObject;
-                    cone.transform.position = new Vector3(4 * j, cone.transform.position.y, itemGenPos + posRangeZ);
+                    cone.transform.position = new Vector3(4 * j, cone.transform.position.y, startPos);
 
                 }
             }
@@ -60,18 +57,18 @@ public class DynamicItemGenerator : MonoBehaviour
                     {
                         //コインを生成
                         GameObject coin = Instantiate(coinPrefab) as GameObject;
-                        coin.transform.position = new Vector3(posRangeX * j, coin.transform.position.y, itemGenPos + posRangeZ + offsetZ);
+                        coin.transform.position = new Vector3(posRangeX * j, coin.transform.position.y, startPos + offsetZ);
                     }
                     else if (7 <= item && item <= 9)
                     {
                         //車を生成
                         GameObject car = Instantiate(carPrefab) as GameObject;
-                        car.transform.position = new Vector3(posRangeX * j, car.transform.position.y, itemGenPos + posRangeZ + offsetZ);
+                        car.transform.position = new Vector3(posRangeX * j, car.transform.position.y, startPos + offsetZ);
                     }
                 }
             }
             //アイテムを生成する範囲を変更
-            itemGenPos += 15;
+            startPos += 15;
         }
     }
 }
