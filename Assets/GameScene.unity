@@ -128,7 +128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &191609148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1639,7 +1639,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 365251087
+  randomSeed: 1981613214
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4985,6 +4985,20 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1737643878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1737643870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e0b93ebf54184c419461726715a3658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carPrefab: {fileID: 1857513184486820, guid: 5c5a2032fc1d86040ad3bc66c509f856, type: 2}
+  coinPrefab: {fileID: 1113700714341128, guid: d54cc367eb698a0469f43c9090c05084, type: 2}
+  conePrefab: {fileID: 1251203266026784, guid: ed62911b85296bb4ea49840b745c26da, type: 2}
 --- !u!1 &1793409741
 GameObject:
   m_ObjectHideFlags: 0
@@ -5119,7 +5133,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2002729601}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5180,4 +5194,4 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 118
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
